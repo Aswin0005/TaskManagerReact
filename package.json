@@ -3,15 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://Aswin0005.github.io/TaskManager",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build-css": "tailwindcss build -i src/index.css -o src/index.css",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "build-css": "tailwindcss build -i src/index.css -o src/index.css"
   },
   "dependencies": {
     "react": "^18.2.0",
