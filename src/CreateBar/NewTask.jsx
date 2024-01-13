@@ -116,7 +116,7 @@ const NewTask = (props) => {
         <form onSubmit={handleSubmit}>
           {/* Name & Description input */}
           <div className="relative">
-            <div className="fixed w-[450px] h-[400px] rounded bg-gray-200 p-4 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-md font-robotoCondensed">
+            <div className="fixed w-[475px] h-[400px] rounded bg-[#DBE2EF] dark:bg-[#393E46] p-4 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-sm shadow-[#EEEEEE] font-robotoCondensed">
               <label htmlFor="task-name" className="">
                 Name :{' '}
               </label>
@@ -124,7 +124,7 @@ const NewTask = (props) => {
                 type="search"
                 id="task-name"
                 placeholder="Type your Task..."
-                className="w-72 p-1"
+                className="w-72 p-1 dark:bg-[#393E46] border"
                 value={props.oper === 'Editing' ? props.details.editName : name}
                 onChange={handleNameChange}
                 autoComplete="off"
@@ -134,7 +134,7 @@ const NewTask = (props) => {
                 <textarea
                   type="text"
                   id="description"
-                  className="w-full h-36 mt-2 resize-none"
+                  className="w-full h-36 mt-2 resize-none dark:bg-[#393E46] border"
                   value={
                     props.oper === 'Editing'
                       ? props.details.editDescription
@@ -152,7 +152,7 @@ const NewTask = (props) => {
                   type="date"
                   id="date-time"
                   onChange={handleDateChange}
-                  className="mt-2 ml-2 p-1"
+                  className="mt-2 ml-2 p-1 dark:bg-[#393E46] border"
                   defaultValue={
                     props.oper === 'Editing' &&
                     props.details.editDate &&
@@ -163,7 +163,7 @@ const NewTask = (props) => {
                   type="time"
                   id="time"
                   onChange={(e) => setTime(e.target.value)}
-                  className="mt-2 ml-2 p-1"
+                  className="mt-2 ml-2 p-1 dark:bg-[#393E46] border"
                 ></input>
 
                 {/* Priority box */}
@@ -190,7 +190,7 @@ const NewTask = (props) => {
                     ></input>
                     <label
                       htmlFor="high"
-                      className="text-gray-500  rounded-full w-20 p-[1px] flex justify-center  border-black border-[1px] hover:bg-gray-200 hover:text-black peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-red-500 hover:text-white hover:border-none"
+                      className="dark:text-white border-black rounded-full w-20 p-[1px] flex justify-center  dark:border-white border-[1px] peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-red-500 hover:text-white hover:border-none"
                     >
                       High
                     </label>
@@ -216,7 +216,7 @@ const NewTask = (props) => {
                     ></input>
                     <label
                       htmlFor="moderate"
-                      className="text-gray-500  rounded-full w-24 p-[1px] flex justify-center  border-black border-[1px] hover:bg-gray-200 hover:text-black peer-checked:bg-yellow-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-yellow-500 hover:text-white hover:border-none"
+                      className="dark:text-white border-black rounded-full w-24 p-[1px] flex justify-center  border-white border-[1px]  peer-checked:bg-yellow-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-yellow-500 hover:text-white hover:border-none"
                     >
                       Moderate
                     </label>
@@ -238,11 +238,10 @@ const NewTask = (props) => {
                           ? true
                           : false
                       }
-                      onClick={console.log('Hiiiii22')}
                     ></input>
                     <label
                       htmlFor="low"
-                      className="text-gray-500  rounded-full w-20 p-[1px] flex justify-center  border-black border-[1px] hover:bg-gray-200 hover:text-black peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-green-500 hover:text-white hover:border-none"
+                      className="dark:text-white border-black rounded-full w-20 p-[1px] flex justify-center  dark:border-white border-[1px]  peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-none cursor-pointer transition-shadow hover:shadow-lg hover:bg-green-500 hover:text-white hover:border-none"
                     >
                       Low
                     </label>
@@ -259,7 +258,7 @@ const NewTask = (props) => {
                   </button>
                   <button
                     type="submit"
-                    className="rounded-full w-[65px] p-1 mx-2 bg-violet-700 text-white"
+                    className="rounded-full w-[65px] p-1 mx-2 bg-[#3F72AF] dark:bg-[#00ADB5] text-white"
                   >
                     {props.oper === 'Editing' ? 'Update' : 'Sumbit'}
                   </button>

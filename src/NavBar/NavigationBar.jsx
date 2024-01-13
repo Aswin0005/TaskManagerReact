@@ -15,13 +15,13 @@ const NavBar = () => {
       <h1 className="whitespace-nowrap">{`Hello There,${user}`}</h1>
       {user ? (
         <button
-          className="w-20 bg-violet-700 rounded items-center p-1 text-white"
+          className="w-20 bg-[#3F72AF] dark:bg-[#00ADB5] rounded items-center p-1 text-white"
           onClick={OnLogOut}
         >
           Log Out
         </button>
       ) : (
-        <button className="w-20 bg-violet-700 rounded items-center p-1 text-white">
+        <button className="w-20 bg-[#3F72AF] dark:bg-[#00ADB5] rounded items-center p-1 text-white">
           Log In
         </button>
       )}

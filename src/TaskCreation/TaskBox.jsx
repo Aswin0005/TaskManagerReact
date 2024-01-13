@@ -76,11 +76,11 @@ const TaskContainer = ({ trigger, setTask, task}) => {
               editDate,
               editPriority,
               editId,
-              editedDate
+              editedDate,
             }}
           />
           <div
-            className={`w-auto bg-slate-100 m-2 rounded shadow-md font-mono ${
+            className={`w-auto bg-[#DBE2EF] dark:bg-[#393E46] m-2 rounded shadow-sm shadow-[#3F72AF] dark:shadow-[#00ADB5] font-mono dark:text-[#EEEEEE] ${
               e.dropDown && 'h-auto align-top'
             }`}
           >
@@ -123,7 +123,7 @@ const TaskContainer = ({ trigger, setTask, task}) => {
                 }
               })()}
               <div
-                className={`basis-2/12 p-1 overflow-hidden border-l-[1px] border-l-zinc-300`}
+                className={`basis-2/12 p-1 overflow-hidden  border-l-[1px] border-l-zinc-300`}
               >
                 <p className="truncate">User_Name</p>
               </div>
@@ -136,7 +136,9 @@ const TaskContainer = ({ trigger, setTask, task}) => {
 
               <div
                 className={`basis-2/12 p-1 overflow-hidden border-l-[1px] border-l-zinc-300 ${
-                  e.date <= e.createdDate ? 'text-red-600' : ''
+                  e.date <= e.createdDate
+                    ? 'text-red-600 dark:text-red-500'
+                    : ''
                 }`}
               >
                 <p className="truncate">{e.date}</p>
@@ -144,18 +146,22 @@ const TaskContainer = ({ trigger, setTask, task}) => {
 
               <div
                 className={`basis-2/12 border-l-[1px] border-l-zinc-300 p-1 min-[0px]:max-xl:hidden xl:visible  ${
-                  e.remaining <= 0 ? 'text-red-600' : 'text-green-600'
+                  e.remaining <= 0
+                    ? 'text-red-600 dark:text-red-500'
+                    : 'text-green-500'
                 }`}
               >
                 <p className="truncate">
-                  {`${e.remaining || 'Unavailable'} ${e.remaining && "days"}`}
+                  {`${e.remaining >= 0 ? e.remaining : 'Unavailable'} ${
+                    e.remaining >= 0 && 'days'
+                  }`}
                 </p>
               </div>
 
               {/* Edit buttons */}
               <div className="basis-2/12 flex p-1 border-l-[1px] border-l-zinc-300 justify-evenly items-center overflow-hidden">
                 <button
-                  className="rounded text-white bg-red-600 p-[2px]"
+                  className="rounded text-white bg-red-600 dark:bg-red-500 p-[2px]"
                   onClick={() => handleDeleteButton(id)}
                 >
                   <svg
@@ -174,7 +180,7 @@ const TaskContainer = ({ trigger, setTask, task}) => {
                   </svg>
                 </button>
                 <button
-                  className="rounded text-white bg-blue-500 p-[2px]"
+                  className="rounded text-white bg-[#3F72AF] dark:bg-[#00ADB5] p-[2px]"
                   onClick={() => handleIsEdit(id)}
                 >
                   <svg
@@ -194,14 +200,14 @@ const TaskContainer = ({ trigger, setTask, task}) => {
                 </button>
                 <div className="lg:visible">
                   <button
-                    className="rounded text-white bg-gray-400 p-[1px] min-[0px]:max-xl:hidden xl:visible"
+                    className="rounded text-black bg-[#EEEEEE] p-[1px] min-[0px]:max-xl:hidden xl:visible"
                     onClick={() => handleDropDown(id)}
                   >
                     <p className="text-[10px]">View details</p>
                   </button>
                 </div>
                 <button
-                  className="lg:hidden rounded text-white bg-gray-400 p-[1px]"
+                  className="lg:hidden rounded text-black bg-[#EEEEEE] p-[1px]"
                   onClick={() => handleDropDown(id)}
                 >
                   <svg
