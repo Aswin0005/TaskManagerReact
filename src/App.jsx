@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route index path="/TaskManagerReact" element={<Home />} />
           <Route path="/TaskManagerReact/Profile" element={<Login />} />
-          <Route path="/TaskManagerReact/SignUp" element={<SignUp/>}/>
+          <Route path="/TaskManagerReact/Signup" element={<SignUp/>}/>
         </Routes>
       </BrowserRouter>
     </div>
