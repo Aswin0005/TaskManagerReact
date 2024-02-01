@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react';  
+import { useNavigate } from 'react-router-dom';
+
 
 const NavBar = () => {
+
+  const navigate = useNavigate();
+
   const [user, setUser] = useState('Bob');
   const OnLogOut = () => {
+    navigate("/TaskManagerReact/Profile")
     setUser('');
   };
   return (
