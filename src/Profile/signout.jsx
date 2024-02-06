@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+
 const SignUp = () => {
   let theme = localStorage.getItem('theme');
 

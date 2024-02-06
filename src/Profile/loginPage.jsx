@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+  const navigateSignUp = useNavigate();
   let theme = localStorage.getItem('theme');
 
   useEffect(() => {
@@ -39,12 +42,12 @@ const Login = () => {
           </button>
           <p className="text-xs mt-2">
             Don't have an account?{' '}
-            <a
-              href="/TaskManagerReact/Signup"
+            <button
               className="underline text-blue-400"
+              onClick={() => navigateSignUp('/TaskManagerReact/SignUp')}
             >
               Sign up
-            </a>
+            </button>
           </p>
         </form>
       </div>
